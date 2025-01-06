@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,10 +53,7 @@ table th, table td {
     font-size: 4rem; /* Adjusted font size */
     font-weight: bold;
 }
-table td:nth-child(3) {
-            font-weight: bold; /* Makes the text bold */
-            color: #007bff; /* Change this to your desired color */
-        }
+
 table th {
     background-color: #d7b899;
     color: black;
@@ -109,7 +106,7 @@ table th {
 }
 
 #current-time {
-    font-size: 9rem; /* Increased size for clock */
+    font-size: 8rem; /* Increased size for clock */
     margin: 20px 0;
     font-weight: bold;
     color: #ffcc00; /* Bright color for clock text */
@@ -118,7 +115,7 @@ table th {
 }
 
 #sunrise-time {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #ffcc00; /* Bright yellow color */
     text-align: center;
@@ -145,10 +142,10 @@ table th {
 }
 
 #next-iqama {
-    font-size: 80px;  /* Keep the text larger */
+    font-size: 30px;  /* Make the text larger */
     font-weight: bold;  /* Make the text bold */
     color: red;  /* Initial color */
-    animation: colorChange 3.5s infinite;  /* Extended duration for smoother transitions */
+    animation: colorChange 2s infinite;  /* Color-changing animation */
     text-align: center;  /* Center the text */
     padding: 10px;  /* Add some space around the text */
     background-color: yellow;  /* Add a background color to make it stand out more */
@@ -159,17 +156,11 @@ table th {
     0% {
         color: red;
     }
-    20% {
+    33% {
         color: black;
     }
-    40% {
+    66% {
         color: blue;
-    }
-    60% {
-        color: purple;
-    }
-    80% {
-        color: green;
     }
     100% {
         color: red;
@@ -234,9 +225,6 @@ table th {
         <div id="current-time"></div> <!-- Digital clock moved here -->
         <div id="next-iqama"></div>  <!-- The next iqama time will be displayed here -->
         <div id="next-prayer"></div> <!-- Next Adhan section -->
-        <h3>Jummah Khutbah at 1310</h3>
-        CICC is a charity organization, Charity No. RCN 20200211. Email: info@carlowmasjid.ie.<a href="https://carlowmasjid.ie/">Carlow Masjid</a>
-
     </div>
 </main>
 
@@ -250,22 +238,21 @@ table th {
     let nextRowElement = null;
 
     async function fetchPrayerTimes() {
-    const apiURL = "https://www.islamicfinder.us/index.php/api/v1/timingsByCity?city=Carlow&country=Ireland&method=2"; // Update URL and parameters
-    try {
-        const response = await fetch(apiURL);
-        const data = await response.json();
-        const timings = data.data.timings;
-        const sunriseTime = timings.Sunrise; // Get the Sunrise time
-        document.getElementById("sunrise-time").textContent = `Sunrise: ${sunriseTime}`;
+        const apiURL = "https://api.aladhan.com/v1/timingsByCity?city=Carlow&country=Ireland&method=3";
+        try {
+            const response = await fetch(apiURL);
+            const data = await response.json();
+            const timings = data.data.timings;
+            const sunriseTime = timings.Sunrise; // Get the Sunrise time
+            document.getElementById("sunrise-time").textContent = `Sunrise: ${sunriseTime}`;
 
-        populatePrayerTable(timings);
-        determineNextPrayer(timings);
-    } catch (error) {
-        console.error("Error fetching prayer times:", error);
-        nextPrayerDisplay.textContent = "Failed to load prayer times.";
+            populatePrayerTable(timings);
+            determineNextPrayer(timings);
+        } catch (error) {
+            console.error("Error fetching prayer times:", error);
+            nextPrayerDisplay.textContent = "Failed to load prayer times.";
+        }
     }
-}
-
 
     function populatePrayerTable(timings) {
         const prayers = [
@@ -335,7 +322,7 @@ table th {
     });
 
     if (nextIqama) {
-        console.log(`Next iqama: ${nextIqama.row.cells[0].textContent} at ${nextIqama.row.cells[2].textContent}`);
+        console.log(`Next iqama is for ${nextIqama.row.cells[0].textContent} at ${nextIqama.row.cells[2].textContent}`);
         // Now update the next iqama div with the next iqama time
         nextIqamaDiv.textContent = `Next Iqama is for ${nextIqama.row.cells[0].textContent} at ${nextIqama.row.cells[2].textContent}`;
     } else {
