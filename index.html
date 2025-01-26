@@ -5,67 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovative Solutions</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            color: #333;
         }
+
         header {
-            background-color: #007BFF;
-            color: white;
-            padding: 1rem 0;
+            background: linear-gradient(90deg, #007BFF, #0056b3);
+            color: #fff;
             text-align: center;
+            padding: 1.5rem 0;
         }
+
         nav {
             display: flex;
             justify-content: center;
-            background-color: #0056b3;
+            background: #0056b3;
+            padding: 0.5rem 0;
         }
+
         nav a {
-            color: white;
-            padding: 0.75rem 1.5rem;
+            color: #fff;
             text-decoration: none;
-            text-transform: uppercase;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
+
         nav a:hover {
-            background-color: #003d80;
+            background: #003d80;
         }
+
         section {
             padding: 2rem;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
-        footer {
-            background-color: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
+
+        h2 {
+            color: #007BFF;
         }
+
+        ul {
+            padding-left: 1.5rem;
+            list-style: disc;
+        }
+
+        /* Form Styling */
+        form {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         .form-group {
             margin-bottom: 1rem;
         }
+
         .form-group label {
             display: block;
+            font-weight: bold;
             margin-bottom: 0.5rem;
         }
+
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
             border-radius: 5px;
+            font-size: 1rem;
         }
+
         .form-group button {
-            background-color: #007BFF;
-            color: white;
+            display: inline-block;
+            background: #007BFF;
+            color: #fff;
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
+            font-size: 1rem;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
+
         .form-group button:hover {
-            background-color: #0056b3;
+            background: #0056b3;
+        }
+
+        footer {
+            background: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Card Styles */
+        .service-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            padding-left: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 0.5rem 0;
+            }
         }
     </style>
 </head>
@@ -82,15 +145,17 @@
 
     <section id="services">
         <h2>Our Services</h2>
-        <p>At Innovative Solutions, we provide a wide range of printing and designing services for students, professionals, and businesses. Our services include:</p>
-        <ul>
-            <li>Paper printing</li>
-            <li>Designing and preparing flyers, logos, leaflets, cards, posters, and restaurant menus</li>
-            <li>Promotional stickers and advertisements</li>
-            <li>Drafting, composing, and editing work</li>
-            <li>Digital signage and large-scale advertisements</li>
-            <li>Event-related design materials such as posters, flyers, and signboards</li>
-        </ul>
+        <div class="service-card">
+            <p>At Innovative Solutions, we provide a wide range of printing and designing services for students, professionals, and businesses. Our services include:</p>
+            <ul>
+                <li>Paper printing</li>
+                <li>Designing and preparing flyers, logos, leaflets, cards, posters, and restaurant menus</li>
+                <li>Promotional stickers and advertisements</li>
+                <li>Drafting, composing, and editing work</li>
+                <li>Digital signage and large-scale advertisements</li>
+                <li>Event-related design materials such as posters, flyers, and signboards</li>
+            </ul>
+        </div>
     </section>
 
     <section id="about">
