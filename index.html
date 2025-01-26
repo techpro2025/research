@@ -13,12 +13,23 @@
             color: #333;
         }
 
-        header {
-            background: linear-gradient(90deg, #007BFF, #0056b3);
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem 0;
-        }
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: #fff;
+    padding: 1.5rem 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 1rem;
+}
 
         nav {
             display: flex;
@@ -134,8 +145,11 @@
 </head>
 <body>
     <header>
+    <div class="header-content">
+        <img src="path/to/your/logo.jpeg" alt="Innovative Solutions Logo" class="logo">
         <h1>Welcome to Innovative Solutions</h1>
-    </header>
+    </div>
+</header>
 
     <nav>
         <a href="#services">Services</a>
