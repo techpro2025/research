@@ -1,212 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovative Solutions</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read & Download Qur'an</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
 
-/* Header Styles */
-header {
-    background: linear-gradient(90deg, #007BFF, #0056b3);
-    color: #fff;
-    padding: 1.5rem 0;
-}
+    h1 {
+      text-align: center;
+      color: #004d40;
+      margin-bottom: 10px;
+    }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-.logo {
-    height: 80px; /* Adjust the height as needed */
-    margin-right: 0.5rem;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #0056b3;
-            padding: 0.5rem 0;
-        }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
+    .card:hover {
+      transform: translateY(-4px);
+    }
 
-        nav a:hover {
-            background: #003d80;
-        }
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #00796b;
+      margin-bottom: 10px;
+    }
 
-        section {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+    .btn {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      background-color: #00796b;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
 
-        h2 {
-            color: #007BFF;
-        }
+    .btn:hover {
+      background-color: #004d40;
+    }
 
-        ul {
-            padding-left: 1.5rem;
-            list-style: disc;
-        }
-
-        /* Form Styling */
-        form {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-group button {
-            display: inline-block;
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .form-group button:hover {
-            background: #0056b3;
-        }
-
-        footer {
-            background: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        /* Card Styles */
-        .service-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card ul {
-            padding-left: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav a {
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-    <div class="header-content">
-        <img src="logo1.jpeg" alt="Innovative Solutions Logo" class="logo">
-        <h1>Welcome to Innovative Solutions</h1>
+  <div class="container">
+    <h1>📖 Read & Download the Holy Qur'an</h1>
+    <div class="grid" id="juzGrid">
+      <!-- Juz cards inserted by JS -->
     </div>
-</header>
 
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="grid" style="margin-top: 40px;">
+      <div class="card">
+        <div class="card-title">📘 Full Qur'an</div>
+        <a href="pdf/full-quran.pdf" class="btn" target="_blank">Read Online</a>
+        <a href="pdf/full-quran.pdf" class="btn" download>Download</a>
+      </div>
+    </div>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-card">
-            <p>At Innovative Solutions, we provide a wide range of printing and designing services for students, professionals, and businesses. Our services include:</p>
-            <ul>
-                <li>Paper printing</li>
-                <li>Designing and preparing flyers, logos, leaflets, cards, posters, and restaurant menus</li>
-                <li>Promotional stickers and advertisements</li>
-                <li>Drafting, composing, and editing work</li>
-                <li>Digital signage and large-scale advertisements</li>
-                <li>Event-related design materials such as posters, flyers, and signboards</li>
-            </ul>
-        </div>
-    </section>
+    <div class="footer">
+      &copy; 2025 Qur'an Resources | Made with ❤️
+    </div>
+  </div>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Innovative Solutions is your one-stop shop for all your design and printing needs. From simple composing and printing tasks to large-scale design and digital signage, we cater to students, professionals, and businesses. Our mission is to transform your ideas into reality through innovative and high-quality solutions.</p>
-    </section>
+  <script>
+    const juzGrid = document.getElementById('juzGrid');
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-        <p>You can also reach us via:</p>
-        <ul>
-            <li>Phone: <a href="tel:+123456789">+123456789</a></li>
-            <li>WhatsApp: <a href="https://wa.me/123456789" target="_blank">Message Us</a></li>
-            <li>Email: <a href="mailto:info@innovativesolutions.com">info@innovativesolutions.com</a></li>
-            <li>Visit us at: 123 Main Street, City</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Innovative Solutions. All rights reserved.</p>
-    </footer>
+    for (let i = 1; i <= 30; i++) {
+      const num = i.toString().padStart(2, '0');
+      const juzCard = document.createElement('div');
+      juzCard.className = 'card';
+      juzCard.innerHTML = `
+        <div class="card-title">Juz-${num}</div>
+        <a href="pdf/juz-${num}.pdf" class="btn" target="_blank">Read Online</a>
+        <a href="pdf/juz-${num}.pdf" class="btn" download>Download</a>
+      `;
+      juzGrid.appendChild(juzCard);
+    }
+  </script>
 </body>
 </html>
